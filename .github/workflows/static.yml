@@ -41,7 +41,7 @@ jobs:
       - run: cp index.html ./www/edit/
       - run: cp robots.txt ./www/
       - run: npm install -g tiddlywiki
-      - run: >
+      - run: >-
           tiddlywiki --load index.html --output www 
             --savetiddlers [is[image]] images 
             --savetiddler $:/favicon.ico favicon.ico
