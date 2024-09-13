@@ -42,9 +42,9 @@ jobs:
       - run: cp robots.txt ./www/
       - run: npm install -g tiddlywiki
       - run: >-
-          tiddlywiki --load index.html --output www 
-            --save [is[image]] images 
-            --save $:/favicon.ico favicon.ico
+          tiddlywiki --load index.html --output www \
+            --save [is[image]] images \
+            --save $:/favicon.ico favicon.ico \
             --setfield [is[image]!is[system]] _canonical_uri $:/core/templates/canonical-uri-external-image text/plain 
             --setfield [is[image]!is[system]] text "" text/plain
             --setfield $:/custom/readonly/control readonly $:/custom/booleans/true text/plain 
