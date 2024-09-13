@@ -47,11 +47,11 @@ jobs:
             #--save $:/favicon.ico favicon.ico \
             #--setfield [is[image]!is[system]] _canonical_uri $:/core/templates/canonical-uri-external-image text/plain 
             #--setfield [is[image]!is[system]] text "" text/plain
-            --setfield $:/custom/readonly/control readonly $:/custom/booleans/true text/plain 
-            --deletetiddlers [prefix[$:/custom/state/]]
-            --deletetiddlers [prefix[$:/state/]!prefix[$:/state/tab/sidebar]]
-            --deletetiddlers [prefix[$:/temp/]]
-            --rendertiddler $:/core/save/all index.html text/plain
+            --setfield $:/custom/readonly/control readonly $:/custom/booleans/true text/plain \
+            --deletetiddlers [prefix[$:/custom/state/]] \
+            --deletetiddlers [prefix[$:/state/]!prefix[$:/state/tab/sidebar]] \
+            --deletetiddlers [prefix[$:/temp/]] \
+            --rendertiddler $:/core/save/all index.html text/plain 
       - run: mkdir -p ./www/static
       - run: tiddlywiki --load index.html --output ./public --rendertiddlers [!is[system]!is[image]!field:status[draft]!field:status[placeholder]] $:/custom/templates/static.tiddler.html static text/plain
       - run: tiddlywiki --load index.html --output ./public --rendertiddler $:/core/templates/static.template.css static/static.css text/plain
