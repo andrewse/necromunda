@@ -43,7 +43,7 @@ jobs:
       - run: npm install -g tiddlywiki
       - run: >-
           tiddlywiki --load index.html --output www \
-            --setfield $:/custom/readonly/control readonly $:/custom/booleans/true text/plain \
+            --setfield $:/status/IsReadOnly text true text/plain \
             --deletetiddlers [prefix[$:/custom/state/]] \
             --deletetiddlers [prefix[$:/state/]!prefix[$:/state/tab/sidebar]] \
             --deletetiddlers [prefix[$:/temp/]] \
