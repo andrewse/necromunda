@@ -43,7 +43,7 @@ jobs:
       - run: npm install -g tiddlywiki
       - run: >-
           tiddlywiki --load index.html --output www \
-            --setfield $:/status/IsReadOnly text yes text/plain \
+            --setfield $:/status/IsReadOnly text $:/custom/template/TrueValue text/plain \
             --rendertiddler $:/core/save/all index.html text/plain 
 
       - name: Upload artifact
