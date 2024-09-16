@@ -43,7 +43,7 @@ jobs:
       - run: npm install -g tiddlywiki
       - run: >-
           tiddlywiki --load index.html --output www \
-            --setfield $:/config/TiddlyTools/ReadOnly text yes text/plain \
+            --setfield $:/status/IsReadOnly text yes text/plain \
             --rendertiddler $:/core/save/all index.html text/plain 
       - run: mkdir -p ./www/static
       - run: tiddlywiki --load index.html --output ./public --rendertiddlers [!is[system]!is[image]!field:status[draft]!field:status[placeholder]] $:/custom/templates/static.tiddler.html static text/plain
